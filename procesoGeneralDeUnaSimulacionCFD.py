@@ -28,13 +28,7 @@ MORADO = '#7b2d8b'
 
 
 def _guardar(nombre, dpi=150, mostrar=False, tight=True):
-    """Guarda la figura actual en PNG y la cierra.
-
-    nombre: nombre de archivo sin extensión
-    dpi: resolución de la imagen
-    mostrar: si True llama a `plt.show()` antes de cerrar
-    tight: si True aplica `plt.tight_layout()` antes de guardar
-    """
+    
     if tight:
         try:
             plt.tight_layout()
@@ -50,10 +44,7 @@ def _guardar(nombre, dpi=150, mostrar=False, tight=True):
 #  SIM 1 — Proceso CFD: Geometría → Mallado → Condiciones de frontera
 
 def sim1_proceso_mallado():
-    """
-    Visualiza los pasos del proceso CFD usando una tubería 2D como ejemplo.
-    Muestra: (a) geometría, (b) malla estructurada, (c) condiciones de frontera.
-    """
+ 
     fig, axes = plt.subplots(1, 3, figsize=(13, 4))
 
     #geometria
@@ -107,7 +98,7 @@ def sim1_proceso_mallado():
     ax.text(-0.22, 0, 'Entrada\n$u = u_0$', ha='center',
             fontsize=8, color=VERDE, va='center')
 
-    # Salida: presiom
+    # salida: presiom
     ax.annotate('', xy=(2.35, 0), xytext=(2.0, 0),
                 arrowprops=dict(arrowstyle='->', color=ROJO, lw=1.5))
     ax.text(2.38, 0, 'Salida\n$p=0$', ha='left',
